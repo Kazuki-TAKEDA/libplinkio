@@ -84,8 +84,8 @@ def test_read_existing_data():
         Sample("fid4", "iid4", "0", "0", 0, 1),
     ]
     correct_loci = [
-        Locus(1, "chr1:1", 1.0, 1, "A", "C"),
-        Locus(2, "chr1:2", 2.0, 2, "G", "T"),
+        Locus("1", "chr1:1", 1.0, 1, "A", "C"),
+        Locus("2", "chr1:2", 2.0, 2, "G", "T"),
     ]
     correct_rows = [
         [3, 2, 0, 0],
@@ -117,7 +117,7 @@ def test_write_new_data():
         plink_prefix = os.path.join(temp_dir, "test")
 
         samples = [Sample("fid1", "iid1", "0", "0", 0, 0), Sample("fid2", "iid2", "0", "0", 0, 1)]
-        loci = [Locus(1, "chr1:1", 1.0, 1, "A", "C"), Locus(2, "chr1:2", 2.0, 2, "G", "T")]
+        loci = [Locus("1", "chr1:1", 1.0, 1, "A", "C"), Locus("2", "chr1:2", 2.0, 2, "G", "T")]
         rows = [[0, 1], [1, 2]]
 
         writer = plinkfile.create(plink_prefix, samples)
